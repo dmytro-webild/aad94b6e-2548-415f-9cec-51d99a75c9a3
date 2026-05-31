@@ -6,7 +6,7 @@ import ContactCenter from '@/components/sections/contact/ContactCenter';
 import FaqDouble from '@/components/sections/faq/FaqDouble';
 import FeatureCardTwentySeven from '@/components/sections/feature/FeatureCardTwentySeven';
 import FooterSimple from '@/components/sections/footer/FooterSimple';
-import HeroSplit from '@/components/sections/hero/HeroSplit';
+import HeroBillboardTestimonial from '@/components/sections/hero/HeroBillboardTestimonial';
 import MetricCardEleven from '@/components/sections/metrics/MetricCardEleven';
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import ProductCardTwo from '@/components/sections/product/ProductCardTwo';
@@ -59,11 +59,10 @@ export default function LandingPage() {
   </div>
 
   <div id="hero" data-section="hero">
-      <HeroSplit
+      <HeroBillboardTestimonial
       background={{
         variant: "radial-gradient"}}
-      imagePosition="right"
-      title="Protecting Homes with Expert Roofing Solutions"
+      title="Total Peace of Mind: Secure Your Home with Our Expert Roofing Solutions"
       description="Professional roof repairs, replacements, and inspections backed by quality craftsmanship, industry certifications, and a commitment to your home's protection."
       buttons={[
         {
@@ -74,7 +73,6 @@ export default function LandingPage() {
       imageSrc="http://img.b2bpic.net/free-photo/low-angle-shot-white-architectural-building-with-balconies_181624-1484.jpg"
       imageAlt="Luxury residential roof with drone view"
       mediaAnimation="slide-up"
-      fixedMediaHeight={true}
       avatars={[
         {
           src: "http://img.b2bpic.net/free-photo/close-up-smiling-female-face-looking-camera_1262-2974.jpg",          alt: "Satisfied Customer 1"},
@@ -101,6 +99,12 @@ export default function LandingPage() {
         },
         {
           type: "text",          text: "Customer Satisfaction"},
+      ]}
+      testimonials={[
+        {
+          name: "Sarah M.",          handle: "Luxury Homeowner",          testimonial: "Summit Peak Roofing transformed our home! Their team was professional, efficient, and the quality of their work is simply outstanding. I highly recommend them for any roofing needs.",          rating: 5,
+          imageSrc: "http://img.b2bpic.net/free-photo/portrait-young-smiling-woman-looking-camera_23-2148187139.jpg",          imageAlt: "Sarah M."
+        }
       ]}
     />
   </div>
