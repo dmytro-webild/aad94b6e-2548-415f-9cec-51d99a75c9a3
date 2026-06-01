@@ -2,10 +2,10 @@
 
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ReactLenis from "lenis/react";
-import ContactCenter from '@/components/sections/contact/ContactCenter';
+import ContactSplitForm from '@/components/sections/contact/ContactSplitForm';
 import FaqDouble from '@/components/sections/faq/FaqDouble';
 import FeatureCardTwentySeven from '@/components/sections/feature/FeatureCardTwentySeven';
-import FooterSimple from '@/components/sections/footer/FooterSimple';
+import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
 import HeroBillboardTestimonial from '@/components/sections/hero/HeroBillboardTestimonial';
 import MetricCardEleven from '@/components/sections/metrics/MetricCardEleven';
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
@@ -272,21 +272,29 @@ export default function LandingPage() {
   </div>
 
   <div id="contact" data-section="contact">
-      <ContactCenter
+      <ContactSplitForm
       useInvertedBackground={false}
-      background={{
-        variant: "downward-rays-static"}}
-      tag="Get Your Free Estimate"
       title="Schedule Your Roofing Consultation Today"
       description="Contact us now for a no-obligation inspection and a detailed quote. Let Summit Peak Roofing protect your most valuable investment."
-      inputPlaceholder="Your Email Address"
+      inputs={[
+        { name: 'name', type: 'text', placeholder: 'Your Name', required: true },
+        { name: 'email', type: 'email', placeholder: 'Your Email Address', required: true },
+        { name: 'phone', type: 'tel', placeholder: 'Your Phone Number' }
+      ]}
+      textarea={{
+        name: 'message', placeholder: 'How can we help you?', rows: 4
+      }}
+      imageSrc="http://img.b2bpic.net/free-photo/exterior-modern-villa-surrounded-by-greenery_23-2150821616.jpg"
+      imageAlt="Luxury modern villa with sleek roof design"
+      mediaAnimation="slide-up"
       buttonText="Request a Quote"
-      termsText="By clicking Request a Quote, you're confirming that you agree with our Terms and Conditions."
+      mediaPosition="right"
     />
   </div>
 
   <div id="footer" data-section="footer">
-      <FooterSimple
+      <FooterBaseReveal
+      logoText="Summit Peak Roofing"
       columns={[
         {
           title: "Services",          items: [
@@ -337,8 +345,7 @@ export default function LandingPage() {
           ],
         },
       ]}
-      bottomLeftText="© 2024 Summit Peak Roofing. All rights reserved."
-      bottomRightText="Privacy Policy | Terms of Service"
+      copyrightText="© 2024 Summit Peak Roofing. All rights reserved."
     />
   </div>
       </ReactLenis>
